@@ -77,7 +77,7 @@ onMounted(() => {
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <RouterLink
@@ -107,11 +107,7 @@ onMounted(() => {
             >
           </li>
           <li>
-            <a
-              href="#"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Contact</a
-            >
+            <radix-connect-button />
           </li>
         </ul>
       </div>
@@ -203,17 +199,17 @@ onMounted(() => {
           </li>
 
           <li>
-            <h3 class="font-semibold tracking-tight text-slate-900">Content</h3>
+            <h3 class="font-semibold tracking-tight text-slate-900">Other</h3>
 
             <ul role="list" class="pl-3 mt-3 space-y-2">
               <li>
                 <a href="#" class="text-slate-600 hover:text-slate-800">
-                  What kind of content can I create and edit?
+                  Pricing
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-slate-600 hover:text-slate-800"> Previewing content </a>
+                <a href="#" class="text-slate-600 hover:text-slate-800"> Contact </a>
               </li>
             </ul>
           </li>
