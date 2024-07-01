@@ -79,8 +79,7 @@ import Oracle from '../components/Oracle.vue'
         <h3 class="text-xl font-semibold tracking-tight text-slate-900">Video walkthrough</h3>
 
         <p class="mt-1 text-lg text-slate-600">
-          Watch this 5 minutes video-walkthrough of Spinal. You quickly learn how to set up your
-          dashboard, invite team members, set permissions and how to schedule and publish content.
+          Watch this 5 minutes video-walkthrough of the Morpher Radix Oracle. You quickly learn how it works, how you can get access to the Data and what Data is available.
         </p>
       </div>
     </a>
