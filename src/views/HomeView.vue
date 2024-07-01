@@ -79,7 +79,8 @@ import Oracle from '../components/Oracle.vue'
         <h3 class="text-xl font-semibold tracking-tight text-slate-900">Video walkthrough</h3>
 
         <p class="mt-1 text-lg text-slate-600">
-          Watch this 5 minutes video-walkthrough of the Morpher Radix Oracle. You quickly learn how it works, how you can get access to the Data and what Data is available.
+          Watch this 5 minutes video-walkthrough of the Morpher Radix Oracle. You quickly learn how
+          it works, how you can get access to the Data and what Data is available.
         </p>
       </div>
     </a>
@@ -89,13 +90,39 @@ import Oracle from '../components/Oracle.vue'
     <ul class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
       <li>
         <a
-          href="#"
+          href="https://github.com/Morpher-io/radix-oracle-contracts"
+          target="_blank"
           class="block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white"
         >
-          <h4 class="font-bold tracking-tight text-slate-900">Radix DApp Example</h4>
+          <h4 class="font-bold tracking-tight text-slate-900">Radix Oracle Contracts</h4>
+
+          <p class="text-slate-600">The current contracts we're working with.</p>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/Morpher-io/radix-sample-dapp-backend"
+          target="_blank"
+          class="block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white"
+        >
+          <h4 class="font-bold tracking-tight text-slate-900">Radix DApp Backend Example</h4>
 
           <p class="text-slate-600">
-            We provide an example implementation of a DApp using the Oracle Services
+            We provide an example implementation of a DApp using the Oracle Services on the backend
+            side.
+          </p>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/Morpher-io/radix-frontend"
+          target="_blank"
+          class="block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white"
+        >
+          <h4 class="font-bold tracking-tight text-slate-900">Radix DApp Frontend Example</h4>
+
+          <p class="text-slate-600">
+            The Frontend you see is open-source. Check out the RadixExample View to see the Gumball USD Machine in Action.
           </p>
         </a>
       </li>

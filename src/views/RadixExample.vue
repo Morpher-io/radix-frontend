@@ -14,7 +14,7 @@ function buyGumball() {
       const { data, status } = payload
       const xrdAmount = 1 / data.price
       const buyManifest = buyGumballManifest(
-        xrdAmount,
+        xrdAmount + 1,
         account.value?.address || '',
         priceMsgToString(data),
         data.signature || ''

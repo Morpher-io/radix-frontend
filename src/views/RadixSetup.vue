@@ -7,7 +7,7 @@ import { useRadixStore } from '@/stores/radixstore'
 import { storeToRefs } from 'pinia'
 import { GatewayProcessor } from '@beaker-tools/typescript-toolkit'
 import { RadixNetwork, type WalletDataStateAccount } from '@radixdlt/radix-dapp-toolkit'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 import { newSubscription } from '@/radix/manifests/newSubscription'
 
@@ -60,6 +60,7 @@ async function buySubscription() {
     updateSubscriptions()
   }
 }
+onMounted(updateSubscriptions)
 </script>
 
 <template>
