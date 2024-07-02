@@ -10,9 +10,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/pull-vs-push-oracles',
-      name: 'pullvspushoracles',
-      component: () => import("../views/PullVsPush.vue")
+      path: '/docs',
+      name: 'docs',
+      component: () => import("../views/Docs.vue")
     },
     {
       path: '/radix/setup',
