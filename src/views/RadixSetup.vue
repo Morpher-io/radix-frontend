@@ -80,7 +80,6 @@ onMounted(updateSubscriptions)
     <div v-if="account !== undefined">
       <section class="bg-white dark:bg-gray-900">
         <div class="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0">
-
           <Subscription
             v-for="subscriptionId in subscriptionIds"
             :key="subscriptionId"
@@ -94,9 +93,12 @@ onMounted(updateSubscriptions)
             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
               Access to all real-time data and on-chain attestation service.
             </p>
-            <div class="flex justify-center items-baseline my-8">
-              <span class="mr-2 text-5xl font-extrabold">$1</span>
-              <span class="text-gray-500 dark:text-gray-400">/month</span>
+            <div class="text-center items-baseline my-8">
+              <span class="mr-2 text-3xl line-through">$999</span>
+              <div class="flex justify-center items-baseline mb-8">
+                <span class="mr-2 text-5xl font-extrabold">$1</span>
+                <span class="text-gray-500 dark:text-gray-400">/month*</span>
+              </div>
             </div>
             <!-- List -->
             <ul role="list" class="mb-8 space-y-4 text-left">
@@ -148,15 +150,15 @@ onMounted(updateSubscriptions)
                 </svg>
                 <span>Subscription valid: <span class="font-semibold">1 month</span></span>
               </li>
-              
             </ul>
             <a
               href="#"
-              class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-blue-900 transition" v-on:click="buySubscription()"
+              class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-blue-900 transition"
+              v-on:click="buySubscription()"
               >Get started</a
-            > 
+            >
+            <span class="text-xs text-gray-400 mt-3">* Price valid for the first handful™️ of customers until year end.</span>
           </div>
-         
         </div>
       </section>
     </div>
