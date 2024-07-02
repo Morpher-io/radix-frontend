@@ -66,13 +66,14 @@ import Oracle from '../components/Oracle.vue'
     <p class="mt-8 text-xl text-slate-600">Need to get started quickly?</p>
 
     <a
-      href="#"
+      href="https://youtu.be/TAjVl9A7pOU"
       class="flex flex-col w-full mt-4 overflow-hidden rounded-lg shadow-xl md:flex-row md:w-4/5"
+      target="_blank"
     >
       <div
-        class="flex items-center justify-center w-full px-4 py-16 text-sm font-normal md:w-1/3 text-slate-900/20 bg-gradient-to-br from-indigo-200 via-sky-100 to-indigo-100"
+        class="flex items-center px-2 justify-center w-full text-sm font-normal md:w-1/3 border-t border-b border-l border-slate-200"
       >
-        [Screenshot Image]
+        <img src="@/assets/video_thumb.png" />
       </div>
 
       <div class="w-full px-6 py-4 border-t border-b border-r md:w-2/3 border-slate-200">

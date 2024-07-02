@@ -37,9 +37,9 @@ function buyGumball() {
 </script>
 
 <template>
-  <article class="flex flex-col xl:flex-row gap-3 justify-between max-w-8xl items-start">
+  <article class="flex flex-col md:flex-row gap-3 justify-between md:items-start">
     <div
-      class="max-w-2xl p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      class="basis-1/2 p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
       <div class="flex flex-row justify-between">
         <div>
@@ -54,10 +54,10 @@ function buyGumball() {
       </div>
 
       <div class="flex flex-row gap-3">
-        <div class="basis-1/4 min-w-20">
+        <div class="">
           <img src="@/assets/gumball_machine.webp" width="180" class="min-w-20" />
         </div>
-        <div class="basis-3/4">
+        <div class="">
           <div v-if="account == undefined">Connect your Wallet to get started!</div>
           <div v-if="account != undefined">
             <p class="my-4 text-sm text-gray-500">Your Address: {{ account?.address }}</p>
@@ -72,7 +72,7 @@ function buyGumball() {
       </div>
     </div>
     <div
-      class="max-w-2xl p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 shrink"
+      class="basis-1/2 p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
       <h2 class="text-4xl font-extrabold dark:text-white">How it works</h2>
       <p>
