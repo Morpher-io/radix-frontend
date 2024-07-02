@@ -34,7 +34,7 @@ function makeOracleCall() {
         priceMsgToString(data),
         data.signature || ''
       )
-      console.log(buyManifest);
+      console.log(buyManifest)
       const result = await radixDappToolkit.value?.walletApi.sendTransaction({
         transactionManifest: buyManifest,
         version: 1,
@@ -97,18 +97,60 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="mt-6">
-    <div>ID: {{ subscriptionId }}</div>
-    <div>
-      Authorized Pub Key: <input type="text" v-model="authorizedPubKey" />
-      <button v-on:click="updatePublicKeyForSubscription()">💾</button>
-    </div>
+  <div
+    class="flex flex-col p-6 mx-auto max-w-lg text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white min-w-full"
+  >
+    <div class="mb-6 flex flex-col gap-4">
+      <div class="">
+        <h3 class="mb-4 text-2xl font-semibold">Existing Subscription</h3>
+        <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+          NFT ID
+        </label>
+        <input
+          type="text"
+          id="full_name"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+          :value="subscriptionId"
+          required
+        />
+      </div>
+      <div class="">
+        <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+          >Enrolled Key</label
+        >
+        <div class="flex flex-row gap-1">
+          <input
+            type="text"
+            id="full_name"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+            v-model="authorizedPubKey"
+            required
+          />
+          <button v-on:click="updatePublicKeyForSubscription()" class="border p-2">💾</button>
+        </div>
+        <div
+          class="p-4 mt-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <span class="font-medium">Attention:</span> Connect your Account to get started
+        </div>
+      </div>
 
-    <div>Expires: {{ exires?.toISOString() }}</div>
-    <div v-if="apiCallsUsed && totalApiCalls">
-      Usage: {{ apiCallsUsed }} of {{ totalApiCalls }} ({{
-        ((totalApiCalls - apiCallsUsed) / totalApiCalls) * 100
-      }}% remaining)
+      <div class="">
+        <p class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Expires:</p>
+        <p class="mb-2 block text-sm ftext-gray-900 dark:text-white">{{ exires?.toISOString() }}</p>
+      </div>
+      <div
+        class=""
+        v-if="apiCallsUsed !== undefined && totalApiCalls !== undefined"
+      >
+        <p class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">API Calls:</p>
+        <p class="mb-2 block text-sm text-gray-900 dark:text-white">
+          {{ apiCallsUsed }} of {{ totalApiCalls }} ({{
+            ((totalApiCalls - apiCallsUsed) / totalApiCalls) * 100
+          }}% remaining)
+        </p>
+      </div>
     </div>
-     </div>
+  </div>
 </template>
