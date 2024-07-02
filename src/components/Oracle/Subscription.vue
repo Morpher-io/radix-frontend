@@ -131,8 +131,9 @@ onMounted(() => {
         <div
           class="p-4 mt-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
           role="alert"
+          v-if="authorizedPubKey == undefined || authorizedPubKey.length == 0"
         >
-          <span class="font-medium">Attention:</span> Connect your Account to get started
+          <span class="font-medium">Attention:</span> Enroll your Public Key to start making requests
         </div>
       </div>
 
