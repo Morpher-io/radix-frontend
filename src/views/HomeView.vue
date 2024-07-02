@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Oracle from '../components/Oracle.vue'
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -129,14 +129,14 @@ import Oracle from '../components/Oracle.vue'
       </li>
 
       <li>
-        <a
-          href="#"
+        <RouterLink
+          to="/radix/setup"
           class="block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white"
         >
           <h4 class="font-bold tracking-tight text-slate-900">Subscribe to the Oracle</h4>
 
           <p class="text-slate-600">Get your Oracle NFT and enroll your Public Key</p>
-        </a>
+        </RouterLink>
       </li>
     </ul>
 
