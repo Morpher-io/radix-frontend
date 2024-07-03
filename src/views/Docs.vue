@@ -46,6 +46,13 @@ import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
       <span class="font-medium">Morpher Oracle API:</span>
       https://dev-test-radix-oracle-api.morpher.com
     </div>
+    <div
+      class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+      role="alert"
+    >
+      <span class="font-medium">Morpher Data Feeds:</span>
+      <a href="https://dev-test-radix-oracle-api.morpher.com/markets/morpher">https://dev-test-radix-oracle-api.morpher.com/markets/morpher</a>
+    </div>
 
     <h1 class="text-3xl font-bold my-4">How to get started</h1>
 
