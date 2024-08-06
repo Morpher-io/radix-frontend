@@ -23,6 +23,7 @@ const subscriptionIds = ref<undefined | string[]>();
 function updateSubscriptions() {
   if (account.value !== undefined) {
     console.log('onmounted finished', account.value)
+    console.log('resrouce address', import.meta.env.VITE_ORACLE_SUBSCRIPTION_RESOURCE_ADDRESS)
     gatewayProcessor
       .getNonFungibleIdsHeldBy(
         account.value.address,

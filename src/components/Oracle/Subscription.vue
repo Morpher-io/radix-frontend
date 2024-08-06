@@ -141,7 +141,7 @@ onMounted(() => {
         <p class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Expires:</p>
         <p class="mb-2 block text-sm ftext-gray-900 dark:text-white">{{ exires?.toISOString() }}</p>
       </div>
-      <div
+      <!-- <div
         class=""
         v-if="apiCallsUsed !== undefined && totalApiCalls !== undefined"
       >
@@ -151,7 +151,7 @@ onMounted(() => {
             ((totalApiCalls - apiCallsUsed) / totalApiCalls) * 100
           }}% remaining)
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

@@ -20,6 +20,7 @@ const subscriptionIds = ref<undefined | string[]>()
 function updateSubscriptions() {
   if (account.value !== undefined) {
     console.log('onmounted finished', account.value)
+    console.log('onmounted finished', import.meta.env.VITE_ORACLE_SUBSCRIPTION_RESOURCE_ADDRESS)
     gatewayProcessor
       .getNonFungibleIdsHeldBy(
         account.value.address,
@@ -41,7 +42,7 @@ async function buySubscription() {
   //   ? renewSubscription(account.address, subscription_id, 300, 1)
   //   : newSubscription(account.address, 300, 1);
   if (account.value) {
-    const manifest = newSubscription(account.value.address, 1400, 1)
+    const manifest = newSubscription(account.value.address, 1000, 1)
 
     const result = await radixDappToolkit.value?.walletApi.sendTransaction({
       transactionManifest: manifest,

@@ -12,7 +12,7 @@ function buyGumball() {
   if (account.value !== undefined && account.value.address !== undefined) {
     getPrice().then(async (payload) => {
       const { data, status } = payload
-      const xrdAmount = 1 / data.price
+      const xrdAmount = 1 / data.data[0].price
       const buyManifest = buyGumballManifest(
         xrdAmount + 1,
         account.value?.address || '',

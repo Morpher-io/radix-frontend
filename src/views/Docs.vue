@@ -162,7 +162,7 @@ export function getPublicKey(privateKey) {
           >Step 5</time
         >
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-          Enquire the Price of a Market
+          Enquire the Price of up to 20 Markets
         </h3>
         <div class="text-base font-normal text-gray-500 dark:text-gray-400">
           In your Backend, fetch the market data from the Oracle Backend. For example, any market on
@@ -179,11 +179,17 @@ export function getPublicKey(privateKey) {
           </div>
           <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700 p-4">
             <div class="overflow-scroll max-h-full">
-              <pre><code class="text-sm text-gray-500 dark:text-gray-400 whitespace-pre ">export type PriceMessage = {
+              <pre><code class="text-sm text-gray-500 dark:text-gray-400 whitespace-pre ">
+                
+                export type PricePoint = {
     marketId: string;
     price: number;
     nonce: string;
     createdAt: number;
+}
+
+export type PriceMessage = {
+    data: PricePoint[];
     signature?: string;
 }
 
@@ -195,7 +201,7 @@ export type OracleRequestMessage = {
     signature: string;
   }
   
-export async function getSignatureOracleRequest(marketId: string, nonce: number): Promise&lt;OracleRequestMessage&gt; {
+export async function getSignatureOracleRequest(marketId: string): Promise&lt;OracleRequestMessage&gt; {
 
   const nftId = process.env.ORACLE_NFT_ID; //your NFT ID
   const pk = process.env.PK_DAPP; //your private key from a secure storage
@@ -226,16 +232,13 @@ app.get(&quot;/example/getPrice&quot;, async (req: Request, res: Response&lt;Pri
         //potentially counterfactual transaction so that a user is not bleeding out 
         //the API. This is up to the DAPP developer.
         const nftId = process.env.ORACLE_NFT_ID
-        const currentNonceResponse = await fetch(process.env.ORACLE_BACKEND_URL+&quot;/nonce/&quot; + nftId)
-
-        const nonceJson = await currentNonceResponse.json(); // {nonce: &quot;123&quot;};
-
+      
         const marketId = &quot;GATEIO:XRD_USDT&quot;;
 
         const signedPriceRequest = await getSignatureOracleRequest(marketId, nonceJson.nonce);
 
         console.log(signedPriceRequest)
-        const signedPriceResponse = await fetch(&grave;${process.env.ORACLE_BACKEND_URL}/price/${marketId}/${signedPriceRequest.nonce}/${signedPriceRequest.publicKeyBLS}/${signedPriceRequest.nftId}/${signedPriceRequest.signature}&grave;);
+        const signedPriceResponse = await fetch(&grave;${process.env.ORACLE_BACKEND_URL}/price/${marketId}/${signedPriceRequest.publicKeyBLS}/${signedPriceRequest.nftId}/${signedPriceRequest.signature}&grave;);
         const signedPrice: PriceMessage = await signedPriceResponse.json();
         console.log(signedPrice);
 

@@ -15,7 +15,7 @@ POP_FROM_AUTH_ZONE
     Proof("Sub Proof")
 ;
 CALL_METHOD
-    Address("${import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS}")
+    Address("${import.meta.env.VITE_ORACLE_SUBSCRIPTION_COMPONENT_ADDRESS}")
     "update_subscription_pub_key"
     "${newPublicKey}"
     Proof("Sub Proof")

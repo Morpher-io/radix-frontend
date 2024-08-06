@@ -15,7 +15,7 @@ TAKE_FROM_WORKTOP
     Bucket("bucket")
 ;
 CALL_METHOD
-    Address("${import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS}")
+    Address("${import.meta.env.VITE_ORACLE_SUBSCRIPTION_COMPONENT_ADDRESS}")
     "new_subscription"
     ${months}u64
     Bucket("bucket")

@@ -11,10 +11,14 @@ export type Nonce = {
     nonce: number;
 };
 
-export type PriceMessage = {
+export type PricePoint = {
     marketId: string;
     price: number;
     nonce: string;
     createdAt: number;
+}
+
+export type PriceMessage = {
+    data: PricePoint[];
     signature?: string;
 }
