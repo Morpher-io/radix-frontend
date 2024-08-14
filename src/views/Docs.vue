@@ -51,7 +51,9 @@ import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
       role="alert"
     >
       <span class="font-medium">Morpher Data Feeds:</span>
-      <a href="https://dev-test-radix-oracle-api.morpher.com/markets/morpher">https://dev-test-radix-oracle-api.morpher.com/markets/morpher</a>
+      <a href="https://dev-test-radix-oracle-api.morpher.com/markets/morpher"
+        >https://dev-test-radix-oracle-api.morpher.com/markets/morpher</a
+      >
     </div>
 
     <h1 class="text-3xl font-bold my-4">How to get started</h1>
@@ -173,8 +175,8 @@ export function getPublicKey(privateKey) {
             role="alert"
           >
             <span class="font-medium">Sample Github DApp Backend:</span>
-            <a href="https://github.com/Morpher-io/radix-sample-dapp-backend"
-              > https://github.com/Morpher-io/radix-sample-dapp-backend</a
+            <a href="https://github.com/Morpher-io/radix-sample-dapp-backend">
+              https://github.com/Morpher-io/radix-sample-dapp-backend</a
             >
           </div>
           <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700 p-4">
@@ -268,10 +270,11 @@ app.get(&quot;/example/getPrice&quot;, async (req: Request, res: Response&lt;Pri
             class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
             role="alert"
           >
-            <span class="font-medium">Sample Contract:</span> 
+            <span class="font-medium">Sample Contract:</span>
             <a
               href="https://github.com/Morpher-io/radix-oracle-contracts/blob/main/src/gumball.rs#L101"
-              > https://github.com/Morpher-io/radix-oracle-contracts/blob/main/src/gumball.rs#L101</a
+            >
+              https://github.com/Morpher-io/radix-oracle-contracts/blob/main/src/gumball.rs#L101</a
             >
           </div>
           <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700 p-4">
@@ -301,11 +304,10 @@ app.get(&quot;/example/getPrice&quot;, async (req: Request, res: Response&lt;Pri
           class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
           role="alert"
         >
-          <span class="font-medium">Pending Change: Transient Tokens</span> There is a pending
-          change and/or an addition to how the current attestation service works. In the future you
-          might be able to receive a transient NFT that contains the Price information. This needs
-          to be returned back to the oracle throught eh transaction manifest. Join our community
-          groups to know when that change will happen.
+          <span class="font-medium"
+            >Websockets: For a small amount of feeds it's also possible to subscribe to sockets. To
+            learn more, get in touch with us on Telegram.
+          </span>
         </div>
       </li>
     </ol>

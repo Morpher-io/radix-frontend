@@ -23,7 +23,7 @@ function buyGumball() {
       const result = await radixDappToolkit.value?.walletApi.sendTransaction({
         transactionManifest: buyManifest,
         version: 1,
-        message: 'Buy one Gumball Token for ' + data.price + ' XRD'
+        message: 'Buy one Gumball Token for ' + data.data[0].price + ' XRD'
       })
 
       if (result?.isErr()) {

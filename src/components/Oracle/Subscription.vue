@@ -4,10 +4,7 @@ import { GatewayProcessor } from '@beaker-tools/typescript-toolkit'
 import { RadixNetwork, type WalletDataStateAccount } from '@radixdlt/radix-dapp-toolkit'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
-import { getPrice } from '@/axios/prices'
 import { updatePublicKey } from '@/radix/manifests/updatePublicKey'
-import { buyGumballManifest } from '@/radix/manifests/buy_gumball'
-import { priceMsgToString } from '@/radix/utils'
 
 const store = useRadixStore()
 
@@ -23,33 +20,7 @@ const apiCallsUsed = ref<undefined | number>()
 const totalApiCalls = ref<undefined | number>()
 const authorizedPubKey = ref<undefined | string>()
 
-function makeOracleCall() {
-  if (account.value !== undefined && account.value.address !== undefined) {
-    getPrice().then(async (payload) => {
-      const { data, status } = payload
-      const xrdAmount = 1 / data.price
-      const buyManifest = buyGumballManifest(
-        xrdAmount,
-        account.value?.address || '',
-        priceMsgToString(data),
-        data.signature || ''
-      )
-      console.log(buyManifest)
-      const result = await radixDappToolkit.value?.walletApi.sendTransaction({
-        transactionManifest: buyManifest,
-        version: 1,
-        message: 'Buy one Gumball Token for ' + data.price + ' XRD'
-      })
 
-      if (result?.isErr()) {
-        throw result.error
-      }
-
-      console.log('Buy Subscription result:', result)
-      updateSubscription()
-    })
-  }
-}
 
 async function updatePublicKeyForSubscription() {
   if (authorizedPubKey.value && account.value && props.subscriptionId) {
