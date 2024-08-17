@@ -13,7 +13,7 @@ onMounted(() => {
   initFlowbite()
 
   const dappConfig = {
-    networkId: import.meta.env.VITE_RADIX_NETWORK_ID || RadixNetwork.Stokenet,
+    networkId: import.meta.env.VITE_RADIX_NETWORK_ID == 1 ? RadixNetwork.Mainnet : RadixNetwork.Stokenet,
     applicationVersion: '1.0.0',
     applicationName: 'Morpher',
     applicationDappDefinitionAddress:
