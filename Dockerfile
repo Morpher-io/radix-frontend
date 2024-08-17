@@ -1,4 +1,4 @@
-FROM public.ecr.aws/avanti/oven/bun:1.0.29-alpine AS builder
+FROM oven/bun:alpine AS builder
 
 ARG API_ENDPOINT=api
 ARG NPM_BUILD_ENV=production
