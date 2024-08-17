@@ -13,11 +13,11 @@ onMounted(() => {
   initFlowbite()
 
   const dappConfig = {
-    networkId: RadixNetwork.Stokenet,
+    networkId: import.meta.env.VITE_RADIX_NETWORK_ID || RadixNetwork.Stokenet,
     applicationVersion: '1.0.0',
     applicationName: 'Morpher',
     applicationDappDefinitionAddress:
-      'account_tdx_2_12xmevme9ujzqe3yuyq37ampaa2dw633luw8446gumfycltqe5qty66'
+      import.meta.env.VITE_DAPP_DEFINITION_ADDRESS || 'account_tdx_2_12xmevme9ujzqe3yuyq37ampaa2dw633luw8446gumfycltqe5qty66'
   }
 
   const store = useRadixStore()
