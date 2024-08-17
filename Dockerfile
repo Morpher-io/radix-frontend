@@ -1,7 +1,4 @@
-
-
-
-FROM public.ecr.aws/avanti/oven/bun:1.0.29-alpine as builder
+FROM public.ecr.aws/avanti/oven/bun:1.0.29-alpine AS builder
 
 ARG API_ENDPOINT=api
 ARG NPM_BUILD_ENV=production
@@ -15,11 +12,10 @@ COPY . /usr/src/app
 RUN bun install
 
 
-RUN sed -ri -e "s!VITE_API_ENDPOINT=.*!VITE_API_ENDPOINT=https://${API_ENDPOINT}!g" /usr/src/app/.env.${NPM_BUILD_ENV}
-RUN sed -ri -e "s!base:.*!base:\"/radix\",!g" /usr/src/app/vite.config.ts
+# RUN sed -ri -e "s!VITE_API_ENDPOINT=.*!VITE_API_ENDPOINT=https://${API_ENDPOINT}!g" /usr/src/app/.env.${NPM_BUILD_ENV}
+# RUN sed -ri -e "s!base:.*!base:\"/radix\",!g" /usr/src/app/vite.config.ts
 
-
-RUN bunx vite build --mode ${NPM_BUILD_ENV}
+RUN NODE_ENV=${NPM_BUILD_ENV} && bunx vite build --mode ${NPM_BUILD_ENV} --base=/radix
 
 FROM public.ecr.aws/nginx/nginx:stable-alpine
 
