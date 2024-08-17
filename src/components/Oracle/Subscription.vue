@@ -13,7 +13,7 @@ const { account, radixDappToolkit } = storeToRefs(store)
 const props = defineProps({ subscriptionId: String })
 console.log(props.subscriptionId)
 
-const gatewayProcessor = GatewayProcessor.fromNetworkId(RadixNetwork.Stokenet)
+const gatewayProcessor = GatewayProcessor.fromNetworkId(import.meta.env.VITE_RADIX_NETWORK_ID || RadixNetwork.Stokenet)
 
 const exires = ref<undefined | Date>()
 const apiCallsUsed = ref<undefined | number>()

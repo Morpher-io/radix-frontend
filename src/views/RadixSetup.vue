@@ -13,7 +13,7 @@ import { newSubscription } from '@/radix/manifests/newSubscription'
 
 const store = useRadixStore()
 const { account, radixDappToolkit } = storeToRefs(store)
-const gatewayProcessor = GatewayProcessor.fromNetworkId(RadixNetwork.Stokenet)
+const gatewayProcessor = GatewayProcessor.fromNetworkId(import.meta.env.VITE_RADIX_NETWORK_ID || RadixNetwork.Stokenet)
 
 const subscriptionIds = ref<undefined | string[]>()
 

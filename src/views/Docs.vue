@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
+
+const apiEndpointUrl = import.meta.env.VITE_API_ENDPOINT ;
+
 </script>
 
 <template>
@@ -43,16 +46,16 @@ import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
       class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
       role="alert"
     >
-      <span class="font-medium">Morpher Oracle API:</span>
-      https://dev-test-radix-oracle-api.morpher.com
+      <span class="font-medium">Morpher Oracle API: </span>
+      {{ apiEndpointUrl }}
     </div>
     <div
       class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
       role="alert"
     >
-      <span class="font-medium">Morpher Data Feeds:</span>
-      <a href="https://dev-test-radix-oracle-api.morpher.com/markets/morpher"
-        >https://dev-test-radix-oracle-api.morpher.com/markets/morpher</a
+      <span class="font-medium">Morpher Data Feeds: </span>
+      <a v-bind:href="apiEndpointUrl + '/markets/morpher'"
+        >{{apiEndpointUrl}}/markets/morpher</a
       >
     </div>
 
