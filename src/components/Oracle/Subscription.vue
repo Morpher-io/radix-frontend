@@ -5,6 +5,7 @@ import { RadixNetwork, type WalletDataStateAccount } from '@radixdlt/radix-dapp-
 import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
 import { updatePublicKey } from '@/radix/manifests/updatePublicKey'
+import { renewSubscription } from '@/radix/manifests/renewSubscription'
 
 const store = useRadixStore()
 
@@ -41,6 +42,30 @@ async function updatePublicKeyForSubscription() {
     }
 
     console.log('Buy Subscription result:', result)
+    updateSubscription()
+  }
+}
+
+async function renewOracleSubscription() {
+  if (authorizedPubKey.value && account.value && props.subscriptionId) {
+    const manifest = renewSubscription(
+      account.value?.address,
+      props.subscriptionId,
+      1,
+      1
+    )
+    console.log(manifest)
+    const result = await radixDappToolkit.value?.walletApi.sendTransaction({
+      transactionManifest: manifest,
+      version: 1,
+      message: 'Renew Subscirption for another month'
+    })
+
+    if (result?.isErr()) {
+      throw result.error
+    }
+
+    console.log('Renew Subscription result:', result)
     updateSubscription()
   }
 }
@@ -111,6 +136,7 @@ onMounted(() => {
       <div class="">
         <p class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Expires:</p>
         <p class="mb-2 block text-sm ftext-gray-900 dark:text-white">{{ exires?.toISOString() }}</p>
+        <button v-on:click="renewOracleSubscription()" class="border p-2">Renew</button>
       </div>
       <!-- <div
         class=""
