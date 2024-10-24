@@ -67,6 +67,16 @@ const oracleComponentAddress = import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS;
      {{ oracleComponentAddress }}
     </div>
 
+    <div
+      class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+      role="alert"
+    >
+      <span class="font-medium">Morpher Markets: </span>
+      <a href="https://oracle.morpher.com/markets">
+        https://oracle.morpher.com/markets
+      </a>
+    </div>
+
     <h1 class="text-3xl font-bold my-4">How to get started</h1>
 
     <ol class="relative border-s border-gray-200 dark:border-gray-700">
