@@ -2,6 +2,7 @@
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 
 const apiEndpointUrl = import.meta.env.VITE_API_ENDPOINT ;
+const oracleComponentAddress = import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS;
 
 </script>
 
@@ -63,7 +64,7 @@ const apiEndpointUrl = import.meta.env.VITE_API_ENDPOINT ;
       role="alert"
     >
       <span class="font-medium">Oracle Component Address: </span>
-     {{ import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS }}
+     {{ oracleComponentAddress }}
     </div>
 
     <h1 class="text-3xl font-bold my-4">How to get started</h1>
