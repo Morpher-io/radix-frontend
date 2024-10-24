@@ -58,6 +58,13 @@ const apiEndpointUrl = import.meta.env.VITE_API_ENDPOINT ;
         >{{apiEndpointUrl}}/markets/morpher</a
       >
     </div>
+ <div
+      class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+      role="alert"
+    >
+      <span class="font-medium">Oracle Component Address: </span>
+     {{ import.meta.env.VITE_ORACLE_COMPONENT_ADDRESS }}
+    </div>
 
     <h1 class="text-3xl font-bold my-4">How to get started</h1>
 
