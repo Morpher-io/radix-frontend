@@ -116,25 +116,23 @@ onMounted(() => {
           <label for="public_key" class="block text-base font-semibold text-gray-900 dark:text-white mb-2">
             Public Key Enrollment
           </label>
-          <div class="flex flex-row gap-2">
-            <input
-              type="text"
-              id="public_key"
-              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-              v-model="authorizedPubKey"
-              placeholder="Enter your public key"
-              required
-            />
-            <button 
-              v-on:click="updatePublicKeyForSubscription()" 
-              class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center gap-2 min-w-[120px]"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h-2v5.586l-1.293-1.293z" />
-              </svg>
-              Save Key
-            </button>
-          </div>
+          <input
+            type="text"
+            id="public_key"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+            v-model="authorizedPubKey"
+            placeholder="Enter your public key"
+            required
+          />
+          <button 
+            v-on:click="updatePublicKeyForSubscription()" 
+            class="mt-2 w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h-2v5.586l-1.293-1.293z" />
+            </svg>
+            Save Public Key
+          </button>
           <div
             class="p-4 mt-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
             role="alert"
