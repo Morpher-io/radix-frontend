@@ -51,7 +51,7 @@ async function renewOracleSubscription() {
     const manifest = renewSubscription(
       account.value?.address,
       props.subscriptionId,
-      1,
+      import.meta.env.VITE_ORACLE_SUBSCRIPTION_COMPONENT_ADDRESS == 'component_tdx_2_1cqd5w7as9mq5rzrjtavnaauhtwh7kgu9lxumdtdpqkv3erj0u9dy2n' ? 1000 : 1,
       1
     )
     console.log(manifest)

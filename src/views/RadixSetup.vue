@@ -43,7 +43,7 @@ async function buySubscription() {
   //   ? renewSubscription(account.address, subscription_id, 300, 1)
   //   : newSubscription(account.address, 300, 1);
   if (account.value) {
-    const manifest = newSubscription(account.value.address, 1, 1);
+    const manifest = newSubscription(account.value.address, import.meta.env.VITE_ORACLE_SUBSCRIPTION_COMPONENT_ADDRESS == 'component_tdx_2_1cqd5w7as9mq5rzrjtavnaauhtwh7kgu9lxumdtdpqkv3erj0u9dy2n' ? 1000 : 1, 1);
     console.log(manifest);
 
     const result = await radixDappToolkit.value?.walletApi.sendTransaction({
