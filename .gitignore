@@ -28,4 +28,9 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+<<<<<<< HEAD
 .aider*
+=======
+
+.aider*
+>>>>>>> dev
