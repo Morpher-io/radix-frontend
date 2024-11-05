@@ -75,11 +75,18 @@ function buyGumball() {
       class="basis-1/2 p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
       <h2 class="text-4xl font-extrabold dark:text-white">How it works</h2>
-      <p>
-        When you want to buy one Gumball, then the Frontend will query the Dapp backend for the
-        current Radix price on Gateio. This will then be used to generate a custom Transaction
-        Manifest with a signed Price. That price is then validated on chain against a known public
-        key from the Oracle.
+      <p class="mt-8 text-gray-700 dark:text-gray-300">
+        The Gumball Machine demonstrates how to use the Morpher Oracle in a real-world scenario. Here's how it works:
+      </p>
+      <ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
+        <li>The machine sells gumballs for exactly $1 USD each</li>
+        <li>When you click buy, it fetches the current XRD/USD price from Gate.io through our Oracle</li>
+        <li>The price data comes with a cryptographic signature that proves its authenticity</li>
+        <li>Our smart contract verifies the signature and calculates how many XRD equals $1</li>
+        <li>If the verification succeeds, you receive one gumball token for your XRD payment</li>
+      </ul>
+      <p class="mt-4 text-gray-700 dark:text-gray-300">
+        This demonstrates secure price feeds, signature verification, and atomic swaps - core building blocks for DeFi applications.
       </p>
     </div>
   </article>
